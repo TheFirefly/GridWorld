@@ -1,0 +1,36 @@
+1. No, the bug only moves to a new location when it hasn't reached a wall or a rock, otherwise it turns until it can move forward again.
+
+2. The bug moves north until it reaches an obstacle. It then turns to a new direction (45 degree increments) until i can freely move forward again.
+
+3. It turns until it can move again.
+
+4. It leaves behind a flower.
+
+5. If the bug is facing the edge, it will turn until it can move forward, otherwise if it isn't facing the edge of the grid, it will move forward unless it is obstructed.
+
+6. The bug will turn until it can move forward again.
+
+7. No, a flower does not move.
+
+8. A flower changes colors based on when it has been left behind by the bug. It is not an obstacle.
+
+9. Rocks cannot move but they act as an obstacle.
+
+10. No, actors can not be in the same location.
+
+1. Degrees  |  Compass Direction
+	0			North
+	45			North-East
+	90			East
+	135			South-East
+	180			South
+	225			South-West
+	270			West
+	315			North-West
+	360			North
+
+2. You can move it in any direction, no matter the distance. If you try to move it outside the grid, an IllegalArgumentException is thrown because the location is invalid.
+
+3. setColor is the method used to set the color of an actor.
+
+4. The bug disappears.
