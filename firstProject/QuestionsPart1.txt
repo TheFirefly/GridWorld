@@ -20,14 +20,14 @@
 
 1. Degrees  |  Compass Direction
 	0			North
-	45			North-East
-	90			East
-	135			South-East
-	180			South
-	225			South-West
-	270			West
-	315			North-West
-	360			North
+       45			North-East
+       90			East
+      135			South-East
+      180			South
+      225			South-West
+      270			West
+      315			North-West
+      360			North
 
 2. You can move it in any direction, no matter the distance. If you try to move it outside the grid, an IllegalArgumentException is thrown because the location is invalid.
 
