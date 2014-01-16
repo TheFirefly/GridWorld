@@ -1,0 +1,13 @@
+1. The instance variable sideLength has the purpose of defining how long each side of the box will be so that the bug will not exceed drawing that length.
+
+2. The instance variable steps has the purpose of keeping track of how many steps the bug has taken on the given side, so that it does not exceed sideLength and so that the bug then knows when to turn.
+
+3. The turn method is called twice so that the bug turns 90 degrees in total in order to draw a new side.
+
+4. The move method can be called since BoxBug extends Bug and thus inherits the Bug class implementation of the move method.
+
+5. No, since the constructor requires a length integer which will define how large each side of the box is.
+
+6. No, since it always starts facing the same direction and thus will always draw in the same path.
+
+7. The value of steps will be set to 0 when the amount of steps taken is equal to the sideLength.

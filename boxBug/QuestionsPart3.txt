@@ -1,0 +1,50 @@
+1. loc1.getRow();
+
+2. false
+
+3. (3, 5)
+
+4. 135
+
+5. It knows which adjacent location to return because the method requires that a Location constant (the direction) be passed into it.
+
+(PART 2)
+
+1. You can count the size of the ArrayList returned by getOccupiedLocations()
+
+2. Use isValid()
+
+3. Grid is an interface so it has no implementations. The classes that implement this interface have the method implementations.
+
+4. No, since the ArrayList can then be modified more easily than a simple array.
+
+(PART 3)
+
+1. 3 properties of Actors: Color, Direction, Location
+
+2. North, Blue
+
+3. So that an Actor class could be stand alone and have its own method implementations.
+
+4. No, you must first remove the Actor. You also cannot remove the Actor twice. Yes you can add an Actor, remove it, and then re add it. It does exactly what it says, adds, removes, adds, but too quickly to see.
+
+5. setDirection(getDirection() + 90);
+
+(PART 4)
+
+1. Location next = loc.getAdjacentLocation(getDirection()); 
+ 	if (!gr.isValid(next))
+
+ 	This ensures that the adjacent location the bug is going to move in is valid (meaning its in the grid)
+
+2. Actor neighbor = gr.get(next); 
+   return (neighbor == null) || (neighbor instanceof Flower); 
+
+   This ensures that the canMove method returns false if the adjacent neighbor is anything but empty or a flower.
+
+3. isValid and next to ensure that the Bug is not moving illegaly.
+
+4. getAdjacentLocation so that the method can receive the Location that the Bug is going to move to (checking then if its valid and empty/flower)
+
+5. getLocation(), getDirection(), getGrid()
+
