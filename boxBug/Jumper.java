@@ -32,6 +32,9 @@ public class Jumper extends Actor {
 
         Location loc = getLocation();
         Location next = loc.getAdjacentLocation(getDirection()); //Location 1 space ahead
+        if (next == null || !gr.isValid(next)) {
+            return;
+        }
         Location next2 = next.getAdjacentLocation(getDirection()); //Location 2 spaces ahead
         if (gr.isValid(next2)) { //If 2 spaces in front is valid, then the one directly in front is valid
             moveTo(next2); //Move 2 spaces
