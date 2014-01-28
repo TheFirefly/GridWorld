@@ -1,0 +1,41 @@
+1. act(), getActors(), processActors(), getMoveLocations(), selectMoveLocation(), makeMove()
+
+2. getActors(), processActors(), getMoveLocations(), selectMoveLocation(), makeMove()
+
+3. Yes, if it wants to get a different list of nearby Actors
+
+4. It could change the colors of them, it could remove them, or it could make them move
+
+5. getMoveLocations() gets a list of all the possible spots to move, selectMoveLocation() chooses a random spot from the list, makeMove() actually moves the critter
+
+6. Because it extends Actor and thus inherits the default Actor constructor.
+
+(PART 2)
+
+1. Because the other methods act utilizes have been implemented differently.
+
+2. So that it behaves the same as a regular critter.
+
+3. Modify makeMove() to put flowers at the old location.
+
+4. Because it acquires the list the same way as the Critter does
+
+5. The Actor class
+
+6. getGrid() (inherited from Actor)
+
+(PART 3)
+
+1. It does the same thing as a Critter
+
+2. The Crab Critter only eats Actors that are in the 3 spaces in front of it
+
+3. So that the Critter can obtain the actor locations that it could eat.
+
+4. (4, 3) (4, 4) (4, 5)
+
+5. CrabCritter only moves left/right and then turns when it can't move. Critter moves randomly and doesn't turn to its new location (like the Crab), but a critter does not turn.
+
+6. When its new location will equal its current location, it will turn.
+
+7. Because the Critter method processActors only eats actors that aren't rocks or critters (this is inherited by the CrabCritter class)
