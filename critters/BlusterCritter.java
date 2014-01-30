@@ -20,17 +20,23 @@ public class BlusterCritter extends Critter {
 		Set<Location> set = new HashSet<Location>();
 		Set<Location> set2 = new HashSet<Location>();
 
-		set.addAll(getGrid().getValidAdjacentLocations(getLocation()));
+		set.addAll(getGrid().getValidAdjacentLocations(getLocation())); //Gets all locations around the BlusterCritter
 
 		for (Location l : set) {
-			set2.addAll(getGrid().getValidAdjacentLocations(l));
+			set2.addAll(getGrid().getValidAdjacentLocations(l)); //Gets all locations around the locations that are around the BlusterCritter
 		}
 
 		for (Location s : set) {
+			if (actors.contains(getGrid().get(s))) {
+				continue;
+			}
 			actors.add(getGrid().get(s));
 		}
 
 		for (Location s2 : set2) {
+			if (actors.contains(getGrid().get(s2))) {
+				continue;
+			}
 			actors.add(getGrid().get(s2));
 		}
 
@@ -38,14 +44,13 @@ public class BlusterCritter extends Critter {
 	}
 
 	public void processActors(ArrayList<Actor> actors) {
-		int critter = -1;
+		int critter = -1; //Accounts for the search method including the BlusterCritter itself
         for (Actor a : actors) {
-            if (a instanceof Critter) {
+            if (a != null && a instanceof Critter) {
+            	System.out.println(a.getLocation());
             	critter++;
             }
         }
-
-        System.out.println("Critters: " + critter);
 
         if (critter < this.c) {
         	Color c = getColor();
@@ -53,8 +58,6 @@ public class BlusterCritter extends Critter {
             int green = (int) Math.min(255, c.getGreen() + 15);
             int blue = (int) Math.min(255, c.getBlue() + 15);
             setColor(new Color(red, green, blue));
-
-            System.out.println(getColor());
             return;
         } else {
         	Color c = getColor();
@@ -62,7 +65,6 @@ public class BlusterCritter extends Critter {
             int green = (int) (c.getGreen() * (0.95));
             int blue = (int) (c.getBlue() * (0.95));
             setColor(new Color(red, green, blue));
-            System.out.println(getColor());
             return;
         }
     }
