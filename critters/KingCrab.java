@@ -12,7 +12,7 @@ public class KingCrab extends CrabCritter {
 	public void processActors(ArrayList<Actor> actors) {
         for (Actor a : actors)
         {
-            if (a instanceof Rock) {
+            if (a instanceof Rock || a instanceof Flower) {
             	a.removeSelfFromGrid();
             } else {
             	Location away = a.getLocation().getAdjacentLocation(a.getLocation().getDirectionToward(getLocation()) + 180);
